@@ -1,0 +1,35 @@
+<h1>Students #index</h1>
+<p>Find me in app/views/students/index.html.erb</p>
+<%= link_to "Add Student", new_student_path %>
+<table>
+<tr>
+    <td>id</td>
+    <td>first name</td>
+    <td>last name</td>
+    <td>age</td>
+    <td>email</td>
+    <td>phone number</td>
+    <td>actions</td>
+</tr>
+<%@students.each do |student| %>
+<tr>
+    <td>
+    <%= link_to student.id, student_path(student.id) %>
+    </td>
+    <td><%= student.firstname %></td>
+    <td><%= student.lastname %></td>
+    <td><%= student.age %></td>
+    <td><%= student.email %></td>
+    <td><%= student.phonenumber %></td>
+    <td>
+    <%= link_to "Edit", edit_student_path(student) %>
+   
+
+    <a href="/students/<%= student.id %>" data-method="delete" data-confirmation="Uhoo?! You sure bro?">Delete</a>
+
+    <%= link_to "Delete Student", student_path(student), method: "delete", data:{ confirm: "Sure bo?" } %>
+    </td>
+</tr>
+<% end %>
+
+</table>

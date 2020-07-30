@@ -1,0 +1,34 @@
+
+<%= form_for [@instructor, @student] do |f| %>
+<div>
+    <%= f.label :firstname, "First name" %>
+    <%= f.text_field :firstname%>
+</div>
+
+<div>
+    <%= f.label :lastname, "Last name" %>
+    <%= f.text_field :lastname%>
+</div>
+
+<div>
+    <%= f.label :age, "Age" %>
+    <%= f.text_field :age%>
+</div>
+<div>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email%>
+</div>
+
+<div>
+    <%= f.label :phonenumber, "Phone Number" %>
+    <%= f.text_field :phonenumber%>
+</div>
+
+<div class="form-row"> 
+    <%= f.label :instructor_id, "Instructor Name"%>
+
+<%= f.collection_select :instructor, @instructors, :id, :firstname, prompt: "instructor:" %>
+</div>
+    
+<%= f.submit "Submit" %>
+<% end %>

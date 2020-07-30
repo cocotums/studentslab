@@ -1,0 +1,35 @@
+<h1>Instructors#new</h1>
+<p>Find me in app/views/instructors/new.html.erb</p>
+
+<%= form_for @instructor do |f| %>
+    <div class="form-row">
+    <%= f.label :firstname, "First Name" %>
+    <%= f.text_field :firstname %>
+    </div>
+     <div class="form-row">
+    <%= f.label :lastname, "Last Name" %>
+    <%= f.text_field :lastname %>
+    </div>
+   <div class="form-row">
+    <%= f.label :age, "Age" %>
+    <%= f.text_field :age %>
+    </div>
+     <div class="form-row">
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email %>
+    </div>
+     <div class="form-row">
+    <%= f.label :phonenumber, "Phone Number" %>
+    <%= f.text_field :phonenumber %>
+    </div>
+
+    <% <div class="form-row"> %>
+        <%= f.label :instructor_id, "Instructor Name"%>
+
+        <%= select_tag("instructor_id", options_from_collection_for_select(@instructors, "id", "firstname", "lastname"), prompt: "Select an Instructor") %>
+    <% </div> %>
+    
+
+
+    <%= f.submit %>
+<% end %>

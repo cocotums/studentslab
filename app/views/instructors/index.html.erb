@@ -1,0 +1,38 @@
+<h1>Instructors#index</h1>
+<p>Find me in app/views/instructors/index.html.erb</p>
+<div class="container">
+<%= link_to "Add Instructor", new_instructor_path, class: "btn btn-danger" %>
+<table class="table mt-4">
+<tr>
+    <td>id</td>
+    <td>first name</td>
+    <td>last name</td>
+    <td>age</td>
+    <td>email</td>
+    <td>phone number</td>
+    <td>actions</td>
+</tr>
+<% @instructors.each do |instructor| %>
+<tr>
+    <td>
+    <%= link_to instructor.id, instructor_path(instructor.id) %>
+    
+    </td>
+    <td><%= instructor.firstname %></td>
+    <td><%= instructor.lastname %></td>
+    <td><%= instructor.age %></td>
+    <td><%= instructor.email %></td>
+    <td><%= instructor.phonenumber %></td>
+  
+
+    <td>
+        <%= link_to "Edit", edit_instructor_path(instructor), class: "btn btn-warning" %>
+
+        <%= link_to "Delete Instructor", instructor_path(instructor), method: "delete", data:{ confirm: "Are you sure you want to delete this instructor"}, class: "btn btn-danger" %>
+    </td>
+</tr>
+
+<% end %>
+
+</table>
+</div>
