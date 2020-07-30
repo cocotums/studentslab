@@ -23,12 +23,7 @@
     <%= f.text_field :phonenumber %>
     </div>
 
-    <% <div class="form-row"> %>
-        <%= f.label :instructor_id, "Instructor Name"%>
-
-        <%= select_tag("instructor_id", options_from_collection_for_select(@instructors, "id", "firstname", "lastname"), prompt: "Select an Instructor") %>
-    <% </div> %>
-    
+  
 
 
     <%= f.submit %>
